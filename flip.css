@@ -1,67 +1,140 @@
-#wrapper{
-    display: none;
+#wrapper {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
   
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  /* .flip-card:hover .flip-card-inner {
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
    */
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
   
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-  }
-  #boxes{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-  
-    .flip-card {
-        width: 23%;
-        height: 200px;
-        margin: 0.5rem;
-    }
-    .flip-card img{
-        width: 100%;
-        height: 100%;
-    }
-  .backSide{
-    transform: rotateY(180deg);
-  }
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+}
+
+#boxes {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.flip-card {
+  width: 23%;
+  height: 200px;
+  margin: 0.5rem;
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 4px rgb(0,0,0);
+  cursor: pointer;
+}
+
+.backSide {
+  transform: rotateY(180deg);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(147 59 59);
+  background-image: url("https://img.freepik.com/free-vector/abstract-realistic-technology-particle-background_52683-33064.jpg?w=1060&t=st=1709093191~exp=1709093791~hmac=205e51f6c8a09212a1bddb01e651edf166e062c97e412a6eef5f68d72fec3727")
+}
+
+#wrapper1 button {
+  width: 200px;
+  border: 2px solid;
+  padding: 1rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.5);
+  transition: all 300ms;
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: no-repeat;
+  background-color: beige;
+}
+
+#wrapper1 button:hover {
+  box-shadow: none;
+  transform: translate(2px, 3px);
+}
+
+p{
+ display: none;
+ font-size: medium;
+ padding-top: 20px;
+ font-weight: 900;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ background-color: rgb(26, 52, 104);
+ color: aliceblue;
+ width: 170px;
+ height: 35px;
+ border-radius: 1rem;
+ box-shadow: 2px;
+ text-align: center;
+
+}
+.screen3{
+display: none;
+}
+.display{
+display: block !important;
+}
+.screen3 h2{    color: mintcream;
+    font-size: xxx-large;
+    font-family: cursive;
+}
+
+

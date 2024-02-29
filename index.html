@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <p></p>
+
     <div class="screen" id="wrapper1">
         <button>Start</button>
     </div>
@@ -89,9 +91,8 @@
                     <div class="flip-card-front">
                         <img src="mark.jpg" alt="Avatar">
                     </div>
+                    <div class="flip-card-back"></div>
                 </div>
-
-                <div class="flip-card-back"></div>
             </div>
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -101,7 +102,6 @@
                     <div class="flip-card-back"></div>
                 </div>
             </div>
-
             <div class="flip-card">
 
                 <div class="flip-card-inner">
@@ -121,88 +121,14 @@
                     <div class="flip-card-back"></div>
                 </div>
             </div>
-
         </div>
     </div>
 
+    <div class="screen3" id="wrapper3">
 
-    <script>
-        let imagSrc = ["Op.jpg", "wallpaper.jpg", "bp.jpg", "bp 2.jpg", "batman-logo-4k.jpg", "destiny.jpg"]
-        let btn = document.querySelector("button")
-        let displayphoto = document.querySelector("#wrapper")
-        let start = document.querySelector("#wrapper1")
-        let flip = document.querySelectorAll(".flip-card")
-        let flipBack = document.querySelectorAll(".flip-card-back")
-        let flipFrontImages = document.querySelectorAll(".flip-card-front img")
+    </div>
 
-        let counter = 0
-
-        let blank = []
-        let imageMatching = []
-        let newImages = [...imagSrc, ...imagSrc]
-        // console.log(newImages)
-
-
-        btn.addEventListener("click", () => {
-            displayphoto.style.display = "block"
-            start.style.display = "none"
-        })
-        for (let i = 0; i < newImages.length; i++) {
-            let image = document.createElement("img")
-            image.src = newImages[getRandomValue()]
-            flipBack[i].append(image)
-        }
-        function getRandomValue() {
-            let randomValue = Math.floor(Math.random() * newImages.length)
-            if (blank.includes(randomValue)) return getRandomValue()
-            else {
-                blank.push(randomValue)
-                return randomValue
-            }
-        }
-        flipFrontImages.forEach((image) => {
-            image.addEventListener("click", () => {
-                setTimeout(() => {
-                    counter++;
-                    if (counter > 1) {
-                        imageMatching.push(image.parentElement.nextElementSibling.children[0])
-
-                        // CHECK FOR MATCHING
-                        console.log(imageMatching[0].src, imageMatching[1].src)
-                        if (imageMatching[0].src === imageMatching[1].src) {
-                            console.log("if")
-                            counter = 0
-                            imageMatching.length = 0
-                        }
-                        else {
-                            
-                            imageMatching.forEach((image, index) => {
-                                console.log(image.parentElement.parentElement)
-                                image.parentElement.parentElement.classList.remove("backSide")
-                            })
-                            counter = 0;
-                            imageMatching.length = 0
-                        }
-                    }
-
-                    else {
-                        imageMatching.push(image.parentElement.nextElementSibling.children[0])
-                    }
-                    image.parentElement.parentElement.classList.add("backSide")
-                }, 300)
-            })
-
-        })
-
-
-        function matching() {
-            if (1 < counter) {
-
-            }
-        }
-
-
-
+    <script src="scripts.js">
 
 
 
